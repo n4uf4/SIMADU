@@ -1,0 +1,2 @@
+<?php
+// Halaman forgot password

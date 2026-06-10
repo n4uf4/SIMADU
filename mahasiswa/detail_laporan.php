@@ -1,0 +1,2 @@
+<?php
+// Detail laporan mahasiswa

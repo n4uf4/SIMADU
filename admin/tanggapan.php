@@ -1,0 +1,2 @@
+<?php
+// Tanggapan admin
