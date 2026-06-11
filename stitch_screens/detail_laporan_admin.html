@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Laporan | Sistem Pengaduan</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#fefcff",
+                    "tertiary-fixed": "#dae2fd",
+                    "surface-bright": "#f8f9ff",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed": "#131b2e",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-tint": "#006d32",
+                    "surface-container-highest": "#d3e4fe",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-variant": "#d3e4fe",
+                    "on-primary-container": "#005324",
+                    "primary": "#006d32",
+                    "on-primary-fixed-variant": "#005224",
+                    "on-primary-fixed": "#00210b",
+                    "outline-variant": "#bbcbb9",
+                    "primary-container": "#00d166",
+                    "inverse-primary": "#30e375",
+                    "secondary": "#0059bb",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#565e74",
+                    "secondary-fixed-dim": "#adc7ff",
+                    "surface-container-high": "#dce9ff",
+                    "primary-fixed-dim": "#30e375",
+                    "outline": "#6c7b6c",
+                    "on-surface-variant": "#3c4a3d",
+                    "background": "#f8f9ff",
+                    "inverse-surface": "#213145",
+                    "on-secondary-fixed-variant": "#004493",
+                    "primary-fixed": "#64ff92",
+                    "secondary-container": "#0070ea",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "on-tertiary-container": "#3f475c",
+                    "on-surface": "#0b1c30",
+                    "tertiary-container": "#aeb5cf",
+                    "on-secondary-fixed": "#001a41",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "0.75rem",
+                    "xl": "1rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "display": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            background: rgba(248, 249, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .sidebar-active {
+            background-color: #0070ea;
+            color: #ffffff;
+            font-weight: bold;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation (Mandated by JSON) -->
+<aside class="hidden md:flex flex-col h-full w-72 bg-surface dark:bg-surface-dim shadow-xl rounded-r-xl z-50">
+<div class="flex flex-col h-full py-8 gap-2">
+<!-- Profile Header (JSON Specific) -->
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="Admin Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU1qSCHfVE9ng6E5GuuoUdSBbm8eMdWZtVpqdRfLjb_h-5PjOX3ypcV1jdir8FDzutVS3JpYf8zi_D3pZbWWNl9jrV975KsCxB3IFCftP1OGQXo-Z4ForWUeKNRuYOam1LoXEoEc1yFI8lO1ErVJhy1ywLGB17j5VAeNlPOvFHn58WtXwEAjSCitz3zazYWUIAky7W7dNthQytrZP6JS-MLbJFVrBjxW6UNKmwnbHNDXqvaQBQYjh4BO4lxFjox2UuPig1qmelrh4"/>
+</div>
+<div>
+<h3 class="font-display font-bold text-lg text-primary">Administrator</h3>
+<p class="text-xs text-on-surface-variant font-medium">Biro Kemahasiswaan</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-[10px] uppercase tracking-wider text-primary font-bold">Online</span>
+</div>
+</div>
+</div>
+<!-- Nav Items (JSON Specific) -->
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-r-full mr-4 transition-all group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:scale-110 transition-transform">dashboard</span>
+<span class="font-body text-body-md">Dashboard Admin</span>
+</a>
+<a class="flex items-center px-6 py-3 bg-secondary-container text-on-secondary-container font-bold rounded-r-full mr-4 transition-all" href="#">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">inbox</span>
+<span class="font-body text-body-md">Laporan Masuk</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-r-full mr-4 transition-all group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:scale-110 transition-transform">group</span>
+<span class="font-body text-body-md">Daftar Mahasiswa</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-r-full mr-4 transition-all group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:scale-110 transition-transform">category</span>
+<span class="font-body text-body-md">Kategori</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-r-full mr-4 transition-all group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:scale-110 transition-transform">settings</span>
+<span class="font-body text-body-md">Pengaturan</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto">
+<!-- TopAppBar (Mandated by JSON) -->
+<header class="sticky top-0 w-full z-50 glass-nav shadow-sm">
+<div class="flex items-center justify-between px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 rounded-full hover:bg-primary-container/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">bubble_chart</span>
+<h1 class="font-display font-bold text-xl text-primary tracking-tight">Sistem Pengaduan</h1>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:block text-right">
+<p class="text-xs font-bold text-on-surface">Detail Laporan #LP-2024-082</p>
+<p class="text-[10px] text-on-surface-variant">Terakhir diupdate 2 jam lalu</p>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container p-0.5">
+<img alt="user_profile_avatar" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2Eqaw1FneEvTYnjAOqInvd9p5B-R989-kcNcpIdh1McowFBaiQdwFTU5m-OcWHreHOkGWd6_-f6U9rY_EfaaXtIxjKUoCOM_ztKq9vcI4G6fMG-wIa3ZjCc7qjwsO9t80vCV8hn-UGw3nbe8PalPahL6g0UOX5bDG_GDzMnaMWa6LLV3iHRrHVMgT1e2DuI0K5XOTVnthJcQfNA5SQqZQecGVhF89prJDD3ZnUSJ4fl6FQBkUwYB3n27b51s-3OrR2JwiuNiJFXI"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-6 md:p-10 max-w-7xl mx-auto w-full space-y-8">
+<!-- Back Action & Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<button class="flex items-center gap-2 text-primary font-medium hover:underline group">
+<span class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                            Kembali ke Daftar
+                        </button>
+<h2 class="font-headline text-4xl font-bold text-on-background tracking-tighter">Kerusakan Fasilitas Ruang Kuliah 302</h2>
+<div class="flex flex-wrap gap-3 items-center">
+<span class="bg-primary-container/20 text-on-primary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Kategori: Sarana Prasarana</span>
+<span class="text-on-surface-variant/60 text-xs">•</span>
+<span class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                                24 Oktober 2023, 14:30 WIB
+                            </span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="p-3 bg-surface-container-low text-error hover:bg-error-container hover:text-on-error-container transition-colors rounded-xl shadow-sm active:scale-95">
+<span class="material-symbols-outlined">delete</span>
+</button>
+<button class="p-3 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-xl shadow-sm active:scale-95">
+<span class="material-symbols-outlined">archive</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Report Details & Info -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Main Description Card -->
+<div class="bg-surface-container-low p-8 rounded-2xl space-y-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-9xl">description</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface border-l-4 border-primary pl-4">Deskripsi Pengaduan</h3>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant">
+                                AC di ruang kuliah 302 mengeluarkan suara berisik dan tidak dingin sama sekali sejak sesi pagi tadi. Hal ini sangat mengganggu konsentrasi mahasiswa saat perkuliahan berlangsung, terutama di siang hari saat suhu ruangan meningkat drastis. Mohon segera ditindaklanjuti karena ruangan tersebut digunakan hampir setiap jam.
+                            </p>
+<div class="pt-6 border-t border-outline-variant/30 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="font-headline text-sm font-bold text-primary uppercase tracking-widest">Informasi Mahasiswa</h4>
+<div class="flex items-center gap-4 bg-surface-container p-4 rounded-xl">
+<img alt="Student" class="w-12 h-12 rounded-lg bg-surface-bright" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB81Fdn1i2uNmEOsEW-bGQzIkHhduD6gKYbguXogU40ZC-a20fJ86KFIouNiqhAPUXj7r_HitRMjaqFvWHRcc5iPRcET5nKvF4Vjj7ZkjRop3oJI3ms3FBNULopgdOkfVr6meCC2zihK0oult0s-xubU4GkjZV73YpPQKNLj-XtKD4ARIybm25mboy_X9pkRh8FIiWwixqFhfNOyoDWtmVux__zSBnIT3y1XWVNH0QR_96CpQwdb3GBZTG-UPqdGw8KvIUqjjBOC70"/>
+<div>
+<p class="font-bold text-on-surface">Felix Alexander</p>
+<p class="text-sm text-on-surface-variant">NIM: 210401010042</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline text-sm font-bold text-primary uppercase tracking-widest">Lokasi Terkait</h4>
+<div class="flex items-center gap-4 bg-surface-container p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+<div>
+<p class="font-bold text-on-surface">Gedung Utama (GU)</p>
+<p class="text-sm text-on-surface-variant">Lantai 3, Sayap Barat</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Response Form Card -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm space-y-6">
+<h3 class="font-headline text-xl font-bold text-on-surface">Tanggapan Resmi Admin</h3>
+<div class="space-y-4">
+<label class="block text-sm font-medium text-on-surface-variant" for="tanggapan">Berikan tanggapan atau instruksi tindak lanjut:</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary text-on-surface p-4 transition-all" id="tanggapan" placeholder="Tuliskan pesan konfirmasi atau penyelesaian di sini..." rows="6"></textarea>
+<div class="flex justify-end gap-4">
+<button class="px-6 py-3 font-bold text-primary hover:bg-primary-container/10 rounded-xl transition-all">Simpan Draft</button>
+<button class="px-8 py-3 font-bold bg-primary text-on-primary rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">Kirim Tanggapan</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Evidence & Status -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Status Management -->
+<div class="bg-surface-container p-8 rounded-2xl space-y-6">
+<h3 class="font-headline text-xl font-bold text-on-surface">Kelola Status</h3>
+<div class="relative group">
+<label class="block text-xs font-bold text-primary uppercase tracking-widest mb-2">Status Saat Ini</label>
+<select class="w-full bg-surface-container-lowest border-2 border-outline-variant/30 rounded-xl px-4 py-3 font-bold text-on-surface appearance-none focus:border-primary transition-all">
+<option class="text-error" value="pending">Menunggu (Pending)</option>
+<option class="text-secondary" selected="" value="processed">Diproses (Processed)</option>
+<option class="text-primary" value="resolved">Selesai (Resolved)</option>
+</select>
+<div class="absolute right-4 bottom-3.5 pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<span class="font-bold text-on-surface">Catatan:</span> Mengubah status menjadi "Selesai" akan mengirimkan notifikasi otomatis ke mahasiswa pelapor.
+                            </p>
+</div>
+<!-- Evidence Photo -->
+<div class="bg-surface-container-low p-6 rounded-2xl space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-lg font-bold text-on-surface">Bukti Foto</h3>
+<button class="p-2 bg-surface-container-highest rounded-lg text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-sm">zoom_in</span>
+</button>
+</div>
+<div class="aspect-square w-full rounded-xl overflow-hidden shadow-inner group relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A detailed, professional photograph of a wall-mounted commercial air conditioning unit inside a modern university lecture hall. The indoor unit is slightly tilted, with dust visible on the vents, suggesting a maintenance issue. The room has high-key, bright lighting typical of a contemporary campus, with clean white walls and blue accent seating in the background. The visual style is editorial and crisp, highlighting the technical nature of the report." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmlL44yGi2N2xKQWsbIUVNDtZuNiWdWuOBghPLPAUTXFpP3eavD0WxaoQj-oWEaLx0wnVaBu-ymXZsdGlOFx-qkbTKgQuQbKOAqDknSNJdtcbyIsBNaLBI62x1ItcVEtndf3Qj5UTK9nfVSJhvvcjtK1d89rCYCB_VkER2lMlJ5dhtHuwCMPafnQKxb_OmXQPZKwjka30tgSbjMAtQWSFmfZjwJyI6Acf71e4CQ6JlvKPCBt8YqblKgHWiZpjPI4RVp7C2_IJlh-I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-white text-xs font-medium">Klik untuk memperbesar gambar</span>
+</div>
+</div>
+<div class="flex gap-2">
+<div class="flex-1 h-1.5 rounded-full bg-primary"></div>
+<div class="flex-1 h-1.5 rounded-full bg-surface-container-highest"></div>
+<div class="flex-1 h-1.5 rounded-full bg-surface-container-highest"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Spacing -->
+<div class="h-24"></div>
+</main>
+</div>
+<!-- Mobile Navigation Shell (Suppressed based on "Back" intent, but keeping placeholder for system compliance if needed) -->
+<!-- Hidden because this is a deep "Detail" page -->
+<script>
+        // Micro-interaction for status dropdown color change
+        const statusSelect = document.querySelector('select');
+        statusSelect.addEventListener('change', (e) => {
+            const val = e.target.value;
+            if (val === 'pending') e.target.style.color = '#ba1a1a';
+            else if (val === 'processed') e.target.style.color = '#0059bb';
+            else if (val === 'resolved') e.target.style.color = '#006d32';
+        });
+
+        // Simple zoom modal simulation logic
+        const zoomBtn = document.querySelector('button .material-symbols-outlined[textContent="zoom_in"]')?.parentElement;
+        if (zoomBtn) {
+            zoomBtn.onclick = () => {
+                alert("Simulasi: Membuka mode tinjauan gambar resolusi penuh.");
+            }
+        }
+    </script>
+</body></html>

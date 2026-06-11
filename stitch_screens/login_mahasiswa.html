@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - Sistem Pengaduan Mahasiswa</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#fefcff",
+                    "tertiary-fixed": "#dae2fd",
+                    "surface-bright": "#f8f9ff",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed": "#131b2e",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-tint": "#006d32",
+                    "surface-container-highest": "#d3e4fe",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-variant": "#d3e4fe",
+                    "on-primary-container": "#005324",
+                    "primary": "#006d32",
+                    "on-primary-fixed-variant": "#005224",
+                    "on-primary-fixed": "#00210b",
+                    "outline-variant": "#bbcbb9",
+                    "primary-container": "#00d166",
+                    "inverse-primary": "#30e375",
+                    "secondary": "#0059bb",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#565e74",
+                    "secondary-fixed-dim": "#adc7ff",
+                    "surface-container-high": "#dce9ff",
+                    "primary-fixed-dim": "#30e375",
+                    "outline": "#6c7b6c",
+                    "on-surface-variant": "#3c4a3d",
+                    "background": "#f8f9ff",
+                    "inverse-surface": "#213145",
+                    "on-secondary-fixed-variant": "#004493",
+                    "primary-fixed": "#64ff92",
+                    "secondary-container": "#0070ea",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "on-tertiary-container": "#3f475c",
+                    "on-surface": "#0b1c30",
+                    "tertiary-container": "#aeb5cf",
+                    "on-secondary-fixed": "#001a41",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "0.75rem",
+                    "xl": "1rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "display": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9ff;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(0, 209, 102, 0.2);
+        }
+        .asymmetric-shape {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex min-h-screen items-center justify-center p-4">
+<!-- Ambient Background Elements -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] rounded-full bg-primary-container/10 blur-[120px]"></div>
+<div class="absolute top-[60%] -right-[10%] w-[50%] h-[50%] rounded-full bg-secondary-container/5 blur-[120px]"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative z-10 w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 bg-surface-container-lowest rounded-[2rem] shadow-2xl overflow-hidden ring-1 ring-outline-variant/10">
+<!-- Left Side: Visual/Branding -->
+<section class="hidden lg:flex lg:col-span-7 relative flex-col justify-between p-12 bg-surface-container-low overflow-hidden">
+<div class="relative z-20">
+<div class="flex items-center gap-3 mb-12">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center neon-glow">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1">bubble_chart</span>
+</div>
+<span class="font-display font-bold text-2xl tracking-tight text-on-background">Sistem Pengaduan</span>
+</div>
+<h1 class="font-display text-5xl font-bold leading-tight text-on-background max-w-md">
+                    Suara Anda, <span class="text-primary">Perubahan</span> Nyata Untuk Kampus.
+                </h1>
+<p class="mt-6 text-on-surface-variant text-lg max-w-sm font-body leading-relaxed">
+                    Platform digital terpadu untuk menyampaikan aspirasi dan laporan demi kenyamanan civitas akademika.
+                </p>
+</div>
+<div class="relative z-20 mt-auto">
+<div class="flex items-center gap-4 p-4 bg-surface-container-highest/50 rounded-2xl backdrop-blur-sm border border-outline-variant/20 max-w-xs">
+<div class="flex -space-x-3">
+<img alt="User 1" class="w-10 h-10 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0of5eMH03CJ1HVcTs5Nvi1XUQIeT0-QPdr-Flz7KE2g_ahcZrTgGqAPaPPyVvjC6b67eg_GdiNLdG2-8g_1CuBtYROf-MiEHp99C_mQKx3t4BK1Awu5jlwG-kc3I9LruJUkf-CUBGODNChCI7Zw2z3wfF0KvoBmC842XIRRdJ5HsZYhyJ1J-F8VVE8MzpID0FdPcGrfSxkjdmDXV85vsm29x6zEgCxpkaXCYjDhIRSZbcAPbEdG5I1edFwIhjIxDJQNZhHQ2DxXA"/>
+<img alt="User 2" class="w-10 h-10 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ-YteHxO7SScT0iNand6oWsbCowDMs135f5CLeeitNqqaDQ8PoxPtNcaYPWlaBlOCUXAlf4JZLa0FeD1zFjfxqIUujWKi9lYQvr8JLF2Skwovgun29yC0cRuza2ZD9o8NMV5rrwGFu80E9f0_x1rZ16R3I9BIl5GmNauwk1iIxhWz51t4jQKRKxZ1dh66Qd5nXxpQIMuZ3nzE065Sj5P0SqalD9X2m5Sbugho9cmkCvta6dz6wSeuQs-KCRrUJCSpqDeEJOusgEY"/>
+<img alt="User 3" class="w-10 h-10 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRz3HF8ntbnCLKO3xFUzJSsqvpNHyc_NVAibZV-xl5sedQsaHnTSDAFAM4ypvWkjitKjppbz26puKPot1-fCWMxM5OhG0tK1KZWIh3pEBs-sjX14nrXuTqA1CkBt0oeROzyn8_6_5FeL8s47bH9qUBT_KO6BbryKujeEGU0-O_j7Jty3or4EtkNkg5X18UfzsWaNbFHteDDrvgT5ZLDwjSfZ5rYCxwaW1JOZHPPu2QBDV9RRBDKxhVmev6N_9SqNt4SfBZPXruObA"/>
+</div>
+<div class="text-sm font-medium text-on-surface">
+<span class="block text-primary font-bold">1,200+</span>
+<span class="text-xs text-on-surface-variant">Laporan Terselesaikan</span>
+</div>
+</div>
+</div>
+<!-- Abstract Decorative Image -->
+<div class="absolute bottom-0 right-0 w-full h-full opacity-40 mix-blend-multiply pointer-events-none">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-low via-transparent to-transparent z-10"></div>
+<img class="w-full h-full object-cover asymmetric-shape" data-alt="A high-end minimalist abstract background featuring fluid organic shapes in soft muted greens and vibrant neon green accents. The composition is clean and editorial with a focus on depth through light-mode tonal layers. Soft diffused shadows and high-contrast white space create a sophisticated futuristic tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC4ggT-NMOIi0DqFdhXiD-mQ8fdkUyAMDkUTcNL2VoMpGYExm9Gc6oABZk9nk9NNVsEjZJreYDT1qtSpY3gq5hRscR57vG9A-ywSiMQ3UCnGRMVs__C3WMQeUmtjyRveHVKwbOYYYTcrZ9F4I6uKSgPlg7AV7pm_0WHxqFWo8DK5JY39hiFYxl96QPIGaOZVBu0pNVU6b-R9VXmQg6rl_Ds7kmf2Nwg6x4daW0R38TkI9EhCOT1PA5x_HV8ij9ByLWztU8W7_8upg"/>
+</div>
+</section>
+<!-- Right Side: Login Form -->
+<section class="lg:col-span-5 p-8 md:p-12 lg:p-16 flex flex-col justify-center bg-surface-container-lowest">
+<div class="mb-10 lg:hidden flex items-center gap-2">
+<div class="w-8 h-8 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-lg" style="font-variation-settings: 'FILL' 1">bubble_chart</span>
+</div>
+<span class="font-display font-bold text-xl text-on-background">Sistem Pengaduan</span>
+</div>
+<header class="mb-10">
+<h2 class="font-display text-3xl font-bold text-on-background">Selamat Datang</h2>
+<p class="text-on-surface-variant mt-2 font-body">Masuk menggunakan akun mahasiswa Anda.</p>
+</header>
+<form action="#" class="space-y-6" onsubmit="event.preventDefault()">
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant ml-1 font-label" for="nim">NIM (Nomor Induk Mahasiswa)</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-on-surface-variant/50 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-transparent border-2 rounded-xl focus:bg-surface-container-lowest focus:border-primary focus:ring-0 transition-all font-body placeholder:text-on-surface-variant/30" id="nim" name="nim" placeholder="Masukkan NIM anda" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center px-1">
+<label class="block text-sm font-semibold text-on-surface-variant font-label" for="password">Kata Sandi</label>
+<a class="text-xs font-medium text-primary hover:underline transition-all" href="#">Lupa Sandi?</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-on-surface-variant/50 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<input class="w-full pl-12 pr-12 py-4 bg-surface-container-low border-transparent border-2 rounded-xl focus:bg-surface-container-lowest focus:border-primary focus:ring-0 transition-all font-body placeholder:text-on-surface-variant/30" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-4 flex items-center text-on-surface-variant/50 hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-3 py-2">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20 bg-surface-container-low" id="remember" type="checkbox"/>
+<label class="text-sm text-on-surface-variant font-medium cursor-pointer" for="remember">Ingat saya di perangkat ini</label>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-2 group" type="submit">
+                    Masuk Sekarang
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+<div class="mt-10 pt-8 border-t border-outline-variant/10 text-center">
+<p class="text-on-surface-variant font-body">
+                    Belum memiliki akun? 
+                    <a class="text-primary font-bold hover:underline transition-all decoration-2 underline-offset-4 ml-1" href="#">Daftar Akun Baru</a>
+</p>
+</div>
+<!-- Footer Small Text -->
+<footer class="mt-auto pt-8 flex justify-center gap-6 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant/40">
+<a class="hover:text-primary transition-colors" href="#">Bantuan</a>
+<a class="hover:text-primary transition-colors" href="#">Privasi</a>
+<a class="hover:text-primary transition-colors" href="#">Syarat</a>
+</footer>
+</section>
+</main>
+<!-- Floating Micro-Interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.classList.add('neon-glow');
+                });
+                input.addEventListener('blur', () => {
+                    input.parentElement.classList.remove('neon-glow');
+                });
+            });
+        });
+    </script>
+</body></html>

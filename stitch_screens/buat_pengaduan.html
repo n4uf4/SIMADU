@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sistem Pengaduan - Buat Laporan</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#fefcff",
+                    "tertiary-fixed": "#dae2fd",
+                    "surface-bright": "#f8f9ff",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed": "#131b2e",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-tint": "#006d32",
+                    "surface-container-highest": "#d3e4fe",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-variant": "#d3e4fe",
+                    "on-primary-container": "#005324",
+                    "primary": "#006d32",
+                    "on-primary-fixed-variant": "#005224",
+                    "on-primary-fixed": "#00210b",
+                    "outline-variant": "#bbcbb9",
+                    "primary-container": "#00d166",
+                    "inverse-primary": "#30e375",
+                    "secondary": "#0059bb",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#565e74",
+                    "secondary-fixed-dim": "#adc7ff",
+                    "surface-container-high": "#dce9ff",
+                    "primary-fixed-dim": "#30e375",
+                    "outline": "#6c7b6c",
+                    "on-surface-variant": "#3c4a3d",
+                    "background": "#f8f9ff",
+                    "inverse-surface": "#213145",
+                    "on-secondary-fixed-variant": "#004493",
+                    "primary-fixed": "#64ff92",
+                    "secondary-container": "#0070ea",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "on-tertiary-container": "#3f475c",
+                    "on-surface": "#0b1c30",
+                    "tertiary-container": "#aeb5cf",
+                    "on-secondary-fixed": "#001a41",
+                    "on-error": "#ffffff"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "display": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Custom toggle styling */
+        .toggle-checkbox:checked {
+            right: 0;
+            background-color: #00d166;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #006d32;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #bbcbb9; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm opacity-90">
+<div class="flex items-center justify-between px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="bubble_chart">bubble_chart</span>
+<h1 class="font-display font-bold text-xl text-primary">Sistem Pengaduan</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary-container/20 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<img alt="User Profile" class="w-10 h-10 rounded-full border-2 border-primary/20" data-alt="A professional studio portrait of a young adult male with a friendly expression. The lighting is soft and high-key, matching a clean light-mode UI aesthetic. The background is a minimalist, neutral gradient of soft blues and whites. The overall style is modern, polished, and corporate-tech focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Um1pA1MwK1jZqkHLLV3BdzHSgd9fh48dRSEx2DKvpzgXOV7Bal5e1HdbuI4TfreOATezp9gO93SwMnW2a0kiYWyfQF2w_MYAnBwxhLkP1DHeUb6F6H1B1WYqidYuengrJHoGEBhwTXfOCGT7j1XrQ2_ipy2Ai2J1N3q0sqv96Tzn4q5AIN6PP5sPgZmnIsewGP0J5gWSCjt28N50Rw1M3gwAJizIRgfvBE3KSIoqKNhSSWWqKljmIxN-mk9OfgX5dtRiZZwmXFI"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-3xl mx-auto">
+<!-- Header Section -->
+<div class="mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
+<h2 class="font-display text-4xl font-bold text-on-background tracking-tight mb-2">Buat Laporan Baru</h2>
+<p class="text-on-surface-variant font-body leading-relaxed">Sampaikan keluhan atau aspirasi Anda. Kami menjamin kerahasiaan data sesuai dengan pilihan privasi Anda.</p>
+</div>
+<!-- Complaint Form -->
+<form class="space-y-8 pb-12">
+<!-- Bento Grid Section: Basic Info -->
+<div class="grid grid-cols-1 md:grid-cols-1 gap-6">
+<div class="bg-surface-container-low p-8 rounded-3xl space-y-6 transition-all duration-300 hover:shadow-lg">
+<!-- Title Input -->
+<div class="space-y-2">
+<label class="font-label text-label-sm font-semibold text-primary uppercase tracking-wider">Judul Laporan</label>
+<input class="w-full bg-surface-container-lowest border-none outline outline-1 outline-outline-variant/20 focus:outline-primary focus:ring-0 rounded-xl px-4 py-3 font-body text-on-surface placeholder:text-on-surface-variant/40 transition-all" placeholder="Apa yang ingin Anda laporkan?" type="text"/>
+</div>
+<!-- Category Select -->
+<div class="space-y-2">
+<label class="font-label text-label-sm font-semibold text-primary uppercase tracking-wider">Kategori</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border-none outline outline-1 outline-outline-variant/20 focus:outline-primary focus:ring-0 rounded-xl px-4 py-3 font-body text-on-surface transition-all">
+<option disabled="" selected="">Pilih kategori fasilitas/layanan</option>
+<option>Akademik</option>
+<option>Fasilitas Umum</option>
+<option>Kesehatan &amp; Kebersihan</option>
+<option>Keamanan</option>
+<option>Lainnya</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-3.5 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Description Textarea -->
+<div class="space-y-2">
+<label class="font-label text-label-sm font-semibold text-primary uppercase tracking-wider">Deskripsi Lengkap</label>
+<textarea class="w-full bg-surface-container-lowest border-none outline outline-1 outline-outline-variant/20 focus:outline-primary focus:ring-0 rounded-xl px-4 py-4 font-body text-on-surface placeholder:text-on-surface-variant/40 transition-all resize-none" placeholder="Berikan detail mengenai waktu, lokasi, dan kronologi kejadian..." rows="5"></textarea>
+</div>
+</div>
+</div>
+<!-- Evidence Section: Asymmetric Layout -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+<div class="md:col-span-3 bg-surface-container-low p-8 rounded-3xl flex flex-col justify-center items-center border-2 border-dashed border-outline-variant/30 hover:border-primary-container transition-all group">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="add_photo_alternate">add_photo_alternate</span>
+</div>
+<h3 class="font-display font-bold text-lg text-on-surface">Unggah Bukti Foto</h3>
+<p class="text-on-surface-variant text-sm text-center mt-2 px-4">Seret berkas ke sini atau klik untuk memilih gambar (Max. 5MB)</p>
+<input class="hidden" id="fileUpload" type="file"/>
+<button class="mt-6 px-6 py-2 rounded-full bg-primary text-on-primary font-label text-sm font-medium hover:bg-primary-container/80 transition-colors" onclick="document.getElementById('fileUpload').click()" type="button">Pilih File</button>
+</div>
+<div class="md:col-span-2 bg-primary-container/10 p-8 rounded-3xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="info">info</span>
+<div>
+<h4 class="font-headline font-bold text-on-primary-container mb-2">Penting</h4>
+<p class="text-on-primary-container/80 text-sm leading-relaxed">
+                            Pastikan foto yang diunggah jelas dan tidak mengandung konten sensitif yang tidak relevan dengan laporan.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Privacy Toggles -->
+<div class="bg-surface-container-low p-8 rounded-3xl space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface" data-icon="visibility_off">visibility_off</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Laporkan secara Anonim</h4>
+<p class="text-on-surface-variant text-xs">Nama Anda tidak akan terlihat oleh publik</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-7 bg-surface-dim peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="h-px bg-outline-variant/10"></div>
+<div class="flex items-center justify-between">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface" data-icon="lock">lock</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Laporan Privat</h4>
+<p class="text-on-surface-variant text-xs">Hanya admin yang dapat melihat detail laporan ini</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-7 bg-surface-dim peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="pt-4">
+<button class="w-full py-5 rounded-2xl bg-primary text-on-primary font-headline text-lg font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3" type="submit">
+                    Kirim Pengaduan
+                    <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+<p class="text-center text-on-surface-variant text-xs mt-6">Dengan menekan tombol kirim, Anda menyetujui Syarat dan Ketentuan layanan kami.</p>
+</div>
+</form>
+</main>
+<!-- Bottom Navigation Bar (Contextual: Top-level destination) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(11,28,48,0.05)] z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-5 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label text-label-sm font-medium mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-5 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label text-label-sm font-medium mt-1">Riwayat</span>
+</a>
+<!-- This screen doesn't map directly to a tab index for active state since it's a creation sub-flow, 
+             but we maintain the shell for navigation context -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-5 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label text-label-sm font-medium mt-1">Statistik</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-5 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label text-label-sm font-medium mt-1">Profil</span>
+</a>
+</nav>
+<!-- Floating Atmosphere Elements (Veridian Flow Style) -->
+<div class="fixed top-1/4 -right-24 w-96 h-96 bg-primary-container/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-1/4 -left-24 w-80 h-80 bg-secondary-container/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+<script>
+        // Form Interaction Micro-effects
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('focus', () => {
+                element.parentElement.closest('.bg-surface-container-low')?.classList.add('ring-1', 'ring-primary/20');
+            });
+            element.addEventListener('blur', () => {
+                element.parentElement.closest('.bg-surface-container-low')?.classList.remove('ring-1', 'ring-primary/20');
+            });
+        });
+
+        // Submit Button Loading State (Simulated)
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Mengirim...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> Berhasil Terkirim';
+                btn.classList.replace('bg-primary', 'bg-primary-container');
+                btn.classList.replace('text-on-primary', 'text-on-primary-container');
+            }, 2000);
+        });
+    </script>
+</body></html>

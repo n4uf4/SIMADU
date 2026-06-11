@@ -1,0 +1,140 @@
+================================================================================
+SISTEM PENGADUAN MAHASISWA - QUICK START GUIDE
+================================================================================
+
+🚀 INSTALL & RUN IN 5 MINUTES
+
+STEP 1: SETUP DATABASE
+────────────────────────────────────────────────────────────────────────────
+1. Buka phpMyAdmin: http://localhost/phpmyadmin
+2. Login: user=root, password=(kosong atau sesuai setting)
+3. Klik menu "Import"
+4. Pilih file: database.sql (di folder project)
+5. Klik Go
+6. Done! Database siap ✓
+
+ATAU via Command Line:
+$ mysql -u root -p pengaduanmhs < database.sql
+
+────────────────────────────────────────────────────────────────────────────
+
+STEP 2: UPDATE CONFIG (Optional)
+────────────────────────────────────────────────────────────────────────────
+Edit file: config/koneksi.php
+
+Jika setup Anda berbeda dari default:
+- $host = "localhost"     (ubah jika perlu)
+- $user = "root"          (ubah jika perlu)
+- $pass = ""              (ubah jika punya password)
+- $db = "pengaduanmhs"    (jangan diubah)
+
+────────────────────────────────────────────────────────────────────────────
+
+STEP 3: START SERVER
+────────────────────────────────────────────────────────────────────────────
+Untuk XAMPP:
+1. Buka XAMPP Control Panel
+2. Klik "Start" untuk Apache
+3. Klik "Start" untuk MySQL
+
+Untuk WAMP:
+1. Klik icon WAMP di taskbar
+2. Pilih "Start All Services"
+
+────────────────────────────────────────────────────────────────────────────
+
+STEP 4: BUKA DI BROWSER
+────────────────────────────────────────────────────────────────────────────
+URL: http://localhost/PENGADUANMHS/
+
+(Atau sesuai dengan folder dimana Anda meletakkan project)
+
+────────────────────────────────────────────────────────────────────────────
+
+LOGIN PERTAMA KALI
+────────────────────────────────────────────────────────────────────────────
+Admin:
+  NIM:      111111111
+  Password: password11
+
+Mahasiswa Demo:
+  NIM:      257411023
+  Password: 12345678
+
+Mahasiswa lain:
+  Daftar akun baru melalui link "Daftar" di halaman login
+
+⚠️  PENTING: Ganti password admin setelah login pertama!
+
+────────────────────────────────────────────────────────────────────────────
+
+FILE STRUCTURE
+────────────────────────────────────────────────────────────────────────────
+/
+├── auth/              → Login, Register, Logout
+├── mahasiswa/         → Student pages
+├── admin/             → Admin pages
+├── config/            → Database config
+├── assets/uploads/    → Photo storage
+├── database.sql       → Database schema
+├── README.md          → Full documentation
+├── SETUP.md           → Installation guide
+└── PROJECT_SUMMARY.md → Feature checklist
+
+────────────────────────────────────────────────────────────────────────────
+
+FITUR YANG TERSEDIA
+────────────────────────────────────────────────────────────────────────────
+MAHASISWA:
+  ✓ Daftar & Login
+  ✓ Buat Laporan
+  ✓ Upload Foto
+  ✓ Laporan Anonim/Privat
+  ✓ Lihat Riwayat
+  ✓ Edit & Hapus Laporan
+  ✓ Lihat Tanggapan Admin
+
+ADMIN:
+  ✓ Dashboard Statistik
+  ✓ Kelola Laporan
+  ✓ Filter & Search
+  ✓ Update Status
+  ✓ Berikan Tanggapan
+  ✓ Arsipkan Laporan
+
+────────────────────────────────────────────────────────────────────────────
+
+TROUBLESHOOTING
+────────────────────────────────────────────────────────────────────────────
+Problem: Halaman putih / Error 500
+→ Check: database.sql sudah diimport? Check config/koneksi.php
+
+Problem: Login gagal
+→ Check: NIM dan password benar? Gunakan admin default
+
+Problem: Upload foto gagal
+→ Check: Folder assets/uploads/ ada dan writable?
+→ Check: File size max 5MB? Format jpg/png/gif?
+
+Problem: Laporan tidak tampil
+→ Check: Database sudah ada data?
+
+────────────────────────────────────────────────────────────────────────────
+
+DOKUMENTASI LENGKAP
+────────────────────────────────────────────────────────────────────────────
+README.md       → Overview proyek & fitur
+SETUP.md        → Panduan instalasi detail
+PROJECT_SUMMARY → Checklist fitur & testing
+
+────────────────────────────────────────────────────────────────────────────
+
+READY TO GO! 🎉
+────────────────────────────────────────────────────────────────────────────
+Sistem Pengaduan Mahasiswa siap digunakan!
+
+Untuk pertanyaan lebih lanjut, baca dokumentasi di README.md atau SETUP.md
+
+Good luck with your UAS! 🚀
+
+================================================================================
