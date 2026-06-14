@@ -28,7 +28,7 @@ if (isset($_POST['update'])) {
         $messageType = 'error';
     } else {
         $stmt = mysqli_prepare($conn, "UPDATE laporan SET judul = ?, isi_laporan = ?, id_kategori = ? WHERE id_laporan = ? AND id_user = ?");
-        mysqli_stmt_bind_param($stmt, 'sssii', $judul, $isi, $kategori, $id_laporan, $id_user);
+        mysqli_stmt_bind_param($stmt, 'ssiii', $judul, $isi, $kategori, $id_laporan, $id_user);
         if (mysqli_stmt_execute($stmt)) {
             $message = 'Laporan berhasil diperbarui!';
             $messageType = 'success';
